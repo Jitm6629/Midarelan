@@ -1,0 +1,135 @@
+body{
+    display: grid;
+    grid-template-rows: 80px 5fr 1fr;
+    grid-template-areas: 
+    "nav"
+    "image"
+    "footer"
+    ;
+    max-width: 100vw;
+    overflow-x: 0;
+}
+
+.nav{
+    display: grid;
+    grid-area: nav;
+    grid-template-columns: 25px minmax(35px,1fr) minmax(35px,1fr) minmax(50px , 3fr) 25px;
+    justify-content: center;
+    width: 100%;
+    
+    background-image:linear-gradient(to bottom right,#004b19,#00270d);
+}
+
+.nav a{
+    color: white;
+    cursor: pointer;
+}
+
+.photos{
+    grid-column: 2/3;
+    justify-self: start;
+    align-self: center;
+}
+
+.about{
+    justify-self: start;
+    align-self: center;
+}
+.link{
+    justify-self: end;
+    align-self: center;
+}
+
+.images{
+    grid-area: image;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    
+    width: calc(100% - 20px);
+    max-width: 300px;
+    background-color: #fffbd4;
+    box-shadow: #dddddd 0 0 5px 3px;
+    border-radius: 15px;
+    transition: 0.5s;
+    overflow: hidden;
+
+    cursor: pointer;
+}
+
+.card:hover{
+    box-shadow: #dddddd 0 0 5px 10px;
+}
+
+.card-img{
+    justify-self: self-start;
+    width: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.card-img:hover{
+    transform: scale(1.05);
+}
+
+.photo{
+    height: 105px;
+    width: 100%;
+}
+
+.name{
+    align-self: flex-start;
+    font-size: 20px;
+    padding: 0 5px;
+    color: #fffbd4;
+}
+
+.up{
+    font-size: 12px;
+    padding: 0 5px;
+    color: #fffbd4;
+}
+
+.device{
+    font-size: 12px;
+    padding: 0 5px;
+    color: #fffbd4;
+}
+
+.date{
+    font-size: 12px;
+    padding: 0 5px;
+    color: #fffbd4;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    grid-area: footer;
+    grid-template-rows: 3/4;
+    background-image: linear-gradient(to bottom right , #004b19,#00270d);
+
+    width: 100%;
+    margin-top: 50px;
+}
+
+.footer_text{
+    display: block;
+    color: #fffbd4;
+    align-self: center;
+}
+
+.intrduce{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

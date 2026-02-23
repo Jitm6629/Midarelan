@@ -1,6 +1,10 @@
+html,body{
+    height: 100%;
+}
+
 body{
     display: grid;
-    grid-template-rows: 80px 5fr 1fr;
+    grid-template-rows: 80px 5fr auto;
     grid-template-areas: 
     "nav"
     "image"
@@ -11,33 +15,35 @@ body{
 }
 
 .nav{
-    display: grid;
-    grid-area: nav;
-    grid-template-columns: 25px minmax(35px,1fr) minmax(35px,1fr) minmax(50px , 3fr) 25px;
-    justify-content: center;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     
     background-image:linear-gradient(to bottom right,#004b19,#00270d);
 }
 
+.right{
+    display: flex;
+    margin-left: auto;
+}
+
+.right a{
+    align-items: center;
+    margin-right: 25px;
+}
+
+.icon{
+    margin-left: 25px;
+    justify-items: start;
+    font-weight: bold;
+
+    font-size: 20px;
+}
+
 .nav a{
+    display:  flex;
     color: white;
     cursor: pointer;
-}
-
-.photos{
-    grid-column: 2/3;
-    justify-self: start;
-    align-self: center;
-}
-
-.about{
-    justify-self: start;
-    align-self: center;
-}
-.link{
-    justify-self: end;
-    align-self: center;
 }
 
 .images{
@@ -46,15 +52,18 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-content: flex-start;
     gap: 15px;
-
-    margin-top: 25px;
+    padding-top: 25px;
 }
 
 .card{
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
     
+    height: auto;
     width: calc(100% - 20px);
     max-width: 300px;
     background-color: #fffbd4;
@@ -82,7 +91,7 @@ body{
 }
 
 .photo{
-    height: 105px;
+    max-height: 120px;
     width: 100%;
 }
 
@@ -115,9 +124,9 @@ body{
     display: flex;
     justify-content: center;
     grid-area: footer;
-    grid-template-rows: 3/4;
     background-image: linear-gradient(to bottom right , #004b19,#00270d);
 
+    padding: 50px;
     width: 100%;
     margin-top: 50px;
 }
@@ -132,4 +141,19 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.textContainer{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.textBox{
+    align-items: center;
+
+    margin-top: 25px;
+    border: #004b19 1px solid;
+    border-radius: 15px;
+    padding: 15px;
 }
